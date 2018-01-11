@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.NameMapper">
+	<select id="select" resultType="Name">
+		select * from name
+	</select>
+	<insert id="insert" parameterType="Name">
+		insert into name(name,sex) values(#{name},#{sex})
+	</insert>	
+	<delete id="delete" parameterType="int">
+		delete from name where id=#{id}
+	</delete>
+	<update id="update" parameterType="Name">
+		update name set name=#{name},sex=#{sex}
+		where id=#{id}
+	</update>
+</mapper>
